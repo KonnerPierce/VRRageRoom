@@ -4,30 +4,35 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class ScoreManager : MonoBehaviour
 {
     public TextMeshProUGUI scoreText; // Reference to the TMP Text component in the Inspector
     private int score = 0;
     public GameObject victorySign;
-   // public GameObject restartButton;
+    // public GameObject restartButton;
 
-    private void Start()
+    public Timer timer;
+
+    public void Start()
     {
         UpdateScoreText();
+       
     }
 
     public void Victory()
     {
-        if (score == 400)
+        if (score == 1030) //1030
         {
             victorySign.SetActive(true);
+            timer.StopTimer();
           //  restartButton.SetActive(true);
         }
 
     }
     public void IncreaseScore()
     {
-        score += 100;
+        score += 10;
         UpdateScoreText();
         Victory();
     }
