@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Unity.SceneManagement; 
+using UnityEngine.SceneManagement;
 
 public class Reset : MonoBehaviour
 {
@@ -15,5 +15,10 @@ public class Reset : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void RestartRoom()
+    {
+        SceneManager.LoadScene("GIMM350");
     }
 }
