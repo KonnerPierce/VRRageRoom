@@ -10,7 +10,7 @@ public class ShootWeapon : MonoBehaviour
     private bool _shootingPaused = false;
     private InputData _inputData;
 
-
+    [SerializeField] private AudioSource gunShot;
 
 
 
@@ -44,6 +44,7 @@ public class ShootWeapon : MonoBehaviour
 
     private void Fire()
     {
+        gunShot.Play();
         GameObject bullet = Instantiate(_bulletPrefab) as GameObject;
         bullet.SetActive(true);
         bullet.transform.position = _launchPosition.transform.position;
